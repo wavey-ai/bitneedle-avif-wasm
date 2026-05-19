@@ -1,6 +1,6 @@
 const DEFAULT_MIN_QUANTIZER = 0;
 const DEFAULT_MAX_QUANTIZER = 63;
-const DEFAULT_SPEED = 4;
+const DEFAULT_SPEED = 5;
 
 function assertByte(value, name) {
   if (!Number.isInteger(value) || value < 0 || value > 255) {

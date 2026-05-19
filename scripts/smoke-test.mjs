@@ -5,8 +5,8 @@ import { createBitneedleAvifEncoder } from "../dist/index.js";
 const wasmBinary = await readFile(new URL("../dist/bitneedle_avif.wasm", import.meta.url));
 const encoder = await createBitneedleAvifEncoder(createModule, { wasmBinary });
 
-const width = 64;
-const height = 64;
+const width = 576;
+const height = 576;
 const rgba = new Uint8Array(width * height * 4);
 
 for (let y = 0; y < height; y++) {
@@ -24,7 +24,7 @@ const direct = encoder.encode(rgba, {
   width,
   height,
   quantizer: 40,
-  speed: 8,
+  speed: 5,
   monochrome: true
 });
 
@@ -38,7 +38,7 @@ const fitted = encoder.encodeForTarget(rgba, {
   width,
   height,
   targetBytes,
-  speed: 8,
+  speed: 5,
   monochrome: true
 });
 

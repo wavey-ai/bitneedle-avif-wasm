@@ -48,7 +48,7 @@ const result = encoder.encodeForTarget(rgbaBytes, {
   height: 576,
   targetBytes: 6800,
   monochrome: true,
-  speed: 4
+  speed: 5
 });
 
 console.log(result.bytes.length, result.quantizer, result.fits);
