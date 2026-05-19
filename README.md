@@ -10,17 +10,6 @@ This is intentionally not a general-purpose image codec package. It exposes only
 - exact target-byte fitting by quantizer search
 - small ABI suitable for browser workers and build tools
 
-## Why this exists
-
-`@jsquash/avif` is useful for experiments, but Bitneedle needs more control over the encoder:
-
-- predictable byte-size fitting against available record sidecar capacity
-- greyscale-first encoding for label/intergroove sidecar photographs
-- a narrow, stable API that can be shared by `bitneedle-steganographer` and future tools
-- a build we can tune by removing decode paths, extra codecs, app binaries, tests, and features we do not ship
-
-The goal is better quality at the same byte budget, not broader format support.
-
 ## Requirements
 
 - Emscripten SDK available on `PATH` (`emcc`, `emcmake`)
