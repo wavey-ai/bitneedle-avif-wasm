@@ -9,6 +9,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(BITNEEDLE_LIBAVIF_REF "v1.2.1" CACHE STRING "libavif git ref to build")
 
 set(AVIF_CODEC_AOM "LOCAL" CACHE STRING "Build libaom locally for AVIF encode")
+set(AOM_TARGET_CPU "generic" CACHE STRING "Disable native CPU assembly/intrinsics for WASM")
 set(AVIF_CODEC_DAV1D "OFF" CACHE STRING "Disable dav1d decode")
 set(AVIF_CODEC_LIBGAV1 "OFF" CACHE STRING "Disable libgav1 decode")
 set(AVIF_CODEC_RAV1E "OFF" CACHE STRING "Disable rav1e")
