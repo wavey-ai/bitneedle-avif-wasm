@@ -1,0 +1,29 @@
+{
+  "name": "@wavey-ai/bitneedle-avif-wasm",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Bitneedle-specific AVIF encoder WASM built from libavif/libaom.",
+  "exports": {
+    ".": "./dist/index.js",
+    "./module": "./dist/bitneedle_avif.js",
+    "./wasm": "./dist/bitneedle_avif.wasm"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "clean": "node scripts/clean.mjs"
+  },
+  "keywords": [
+    "bitneedle",
+    "avif",
+    "wasm",
+    "libavif",
+    "aom"
+  ],
+  "license": "SEE LICENSE IN LICENSE"
+}
