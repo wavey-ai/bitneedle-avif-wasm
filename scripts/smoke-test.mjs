@@ -28,9 +28,22 @@ const direct = encoder.encode(rgba, {
   monochrome: true
 });
 
+const colorDirect = encoder.encode(rgba, {
+  width,
+  height,
+  quantizer: 40,
+  speed: 5,
+  monochrome: false
+});
+
 const brand = new TextDecoder().decode(direct.subarray(4, 12));
 if (!brand.startsWith("ftypavif")) {
   throw new Error(`unexpected AVIF brand box: ${brand}`);
+}
+
+const colorBrand = new TextDecoder().decode(colorDirect.subarray(4, 12));
+if (!colorBrand.startsWith("ftypavif")) {
+  throw new Error(`unexpected color AVIF brand box: ${colorBrand}`);
 }
 
 const targetBytes = direct.length + 50;
@@ -51,6 +64,7 @@ if (fitted.bytes.length > targetBytes) {
 
 console.log(JSON.stringify({
   directBytes: direct.length,
+  colorDirectBytes: colorDirect.length,
   fittedBytes: fitted.bytes.length,
   quantizer: fitted.quantizer,
   fits: fitted.fits

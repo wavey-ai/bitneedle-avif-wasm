@@ -6,6 +6,7 @@ This is intentionally not a general-purpose image codec package. It exposes only
 
 - encode already-prepared RGBA photo frames to AVIF
 - monochrome AVIF via YUV400 for greyscale record-sleeve photos
+- color AVIF via YUV444 for photographic sidecars
 - libavif + libaom quality path compiled to WASM
 - exact target-byte fitting by quantizer search
 - small ABI suitable for browser workers and build tools
@@ -47,7 +48,7 @@ const result = encoder.encodeForTarget(rgbaBytes, {
   width: 576,
   height: 576,
   targetBytes: 6800,
-  monochrome: true,
+  monochrome: false,
   speed: 5
 });
 
